@@ -1,0 +1,339 @@
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- GANTI DI SINI: Judul halaman yang muncul di tab browser -->
+    <title>UPIK FLOWER - Bunga Akrilik & Buket Premium</title>
+    
+    <!-- Bagian teknis untuk tampilan (Tailwind CSS & Google Fonts) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bagian teknis untuk ikon (Lucide Icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Bagian kode untuk styling (CSS), tidak perlu diubah -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FEF8F8;
+        }
+        .font-brand {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #C13975, #D94686);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background-image: linear-gradient(to right, #E95D9A 0%, #D94686 51%, #E95D9A 100%);
+            background-size: 200% auto;
+            transition: all 0.5s ease;
+            box-shadow: 0 4px 15px 0 rgba(217, 70, 134, 0.3);
+        }
+        .btn-gradient:hover {
+            background-position: right center;
+            box-shadow: 0 8px 20px 0 rgba(217, 70, 134, 0.4);
+            transform: translateY(-2px);
+        }
+        .product-card {
+            border: 1px solid #F8E8EE;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+            border-color: #D94686;
+        }
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased">
+
+    <!-- =========== BAGIAN ATAS / HEADER & NAVIGASI =========== -->
+    <header class="bg-white/70 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- GANTI DI SINI: Nama Toko Anda -->
+            <a href="#" class="text-3xl font-brand font-bold text-pink-600">UPIK FLOWER</a>
+            
+            <!-- Menu navigasi untuk layar besar -->
+            <nav class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#beranda" class="text-gray-600 hover:text-pink-600 transition">Beranda</a>
+                <a href="#profil" class="text-gray-600 hover:text-pink-600 transition">Profil</a>
+                <a href="#produk" class="text-gray-600 hover:text-pink-600 transition">Produk</a>
+                <a href="#galeri" class="text-gray-600 hover:text-pink-600 transition">Galeri</a>
+                <a href="#kontak" class="btn-gradient text-white px-5 py-2 rounded-full font-semibold">Hubungi Kami</a>
+            </nav>
+
+            <!-- Tombol menu untuk layar kecil/HP -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        
+        <!-- Daftar menu yang muncul saat tombol menu HP diklik -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-lg">
+            <a href="#beranda" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 transition">Beranda</a>
+            <a href="#profil" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 transition">Profil</a>
+            <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 transition">Produk</a>
+            <a href="#galeri" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 transition">Galeri</a>
+            <a href="#kontak" class="block py-4 px-6 text-white bg-pink-500 text-center font-semibold">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- =========== BAGIAN PEMBUKA / HERO SECTION =========== -->
+        <section id="beranda" class="overflow-hidden">
+            <div class="container mx-auto px-6 pt-24 pb-20 lg:py-32 grid md:grid-cols-2 items-center gap-12">
+                <div class="text-center md:text-left reveal">
+                    <!-- GANTI DI SINI: Judul utama dan deskripsi singkat toko Anda -->
+                    <h1 class="text-5xl md:text-6xl font-brand font-bold text-gray-800 leading-tight">
+                        Hadiah Istimewa,
+                        <span class="gradient-text">Kenangan Abadi</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600">
+                        Temukan keindahan bunga akrilik dan buket custom yang dibuat dengan penuh cinta. Sempurna untuk setiap momen berharga.
+                    </p>
+                    <a href="#produk" class="mt-10 inline-block btn-gradient text-white font-bold px-10 py-4 rounded-full text-lg">
+                        Jelajahi Koleksi
+                    </a>
+                </div>
+                <div class="reveal">
+                    <!-- GANTI DI SINI: Ganti link gambar dengan foto produk terbaik Anda -->
+                    <img src="bungaakrilikwarnawarni.jpg.jpeg" alt="Buket Bunga Akrilik Premium" class="rounded-xl shadow-2xl w-full">
+                </div>
+            </div>
+        </section>
+        
+        <!-- =========== BAGIAN PROFIL TOKO =========== -->
+        <section id="profil" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <!-- GANTI DI SINI: Ganti link dengan foto Anda atau logo toko -->
+                        <img src="bungaakrilikbagus.jpg.jpeg" alt="Tentang UPIK FLOWER" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="reveal">
+                        <!-- GANTI DI SINI: Judul dan cerita singkat tentang toko Anda -->
+                        <h2 class="text-4xl font-brand section-title mb-4">Tentang UPIK FLOWER</h2>
+                        <p class="text-gray-600 mb-6">
+                            Berawal dari hobi dan kecintaan pada seni kerajinan tangan, **UPIK FLOWER** lahir di kota Padang untuk menghadirkan pilihan hadiah yang unik dan personal. Kami percaya setiap momen spesial pantas dirayakan dengan sesuatu yang tak lekang oleh waktu, seperti bunga akrilik buatan tangan kami.
+                        </p>
+                        <!-- GANTI DI SINI: Keunggulan toko Anda -->
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-8 w-8 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center">
+                                    <i data-lucide="package" class="w-5 h-5"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Kualitas Terbaik</h4>
+                                    <p class="text-gray-500">Kami hanya menggunakan bahan akrilik premium untuk hasil yang jernih dan tahan lama.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                 <div class="flex-shrink-0 h-8 w-8 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center">
+                                     <i data-lucide="paintbrush-2" class="w-5 h-5"></i>
+                                 </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">100% Buatan Tangan</h4>
+                                    <p class="text-gray-500">Setiap produk dirangkai dengan teliti dan penuh kasih sayang, memastikan setiap detailnya sempurna.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========== BAGIAN PRODUK UNGGULAN =========== -->
+        <section id="produk" class="py-24 bg-pink-50/50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-brand section-title">Koleksi Pilihan</h2>
+                    <p class="text-gray-500 mt-3 text-lg">Dibuat dengan detail dan material terbaik untuk Anda.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- ### PRODUK 1 ### (Salin blok ini untuk menambah produk baru) -->
+                    <div class="product-card bg-white rounded-xl shadow-md overflow-hidden reveal">
+                        <!-- GANTI DI SINI: Link gambar produk 1 -->
+                        <img src="bungaakrilikwarnawarni.jpg.jpeg"w-full h-64 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI DI SINI: Nama produk 1 -->
+                            <h3 class="font-semibold text-xl">Bunga Akrelik Warna Warni</h3>
+                            <!-- GANTI DI SINI: Harga produk 1 -->
+                            <p class="text-pink-600 font-bold mt-2 text-lg">Rp 250.000</p>
+                            <!-- GANTI DI SINI: Deskripsi singkat produk 1 -->
+                            <p class="text-sm text-gray-500 mt-3 h-12">Bunga Akrelik Warna Warni, cocok untuk hiasan meja atau anniversary.</p>
+                            <!-- GANTI DI SINI: Nomor WhatsApp Anda (contoh: 62812xxxx) dan teks pesan -->
+                            <a href="https://api.whatsapp.com/send?phone=6283186867841&text=Halo,%20saya%20tertarik%20dengan%20Buket%20Mawar%20Akrilik." target="_blank" class="mt-4 block w-full text-center btn-gradient text-white py-2.5 rounded-md font-semibold">
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ### PRODUK 2 ### -->
+                    <div class="product-card bg-white rounded-xl shadow-md overflow-hidden reveal" style="transition-delay: 100ms;">
+                        <!-- GANTI DI SINI: Link gambar produk 2 -->
+                        <img src="bungaanggrek.jpg.jpeg" alt="Nama Produk 2" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <!-- GANTI DI SINI: Nama produk 2 -->
+                            <h3 class="font-semibold text-xl">Bunga Meja Anggrek</h3>
+                             <!-- GANTI DI SINI: Harga produk 2 -->
+                            <p class="text-pink-600 font-bold mt-2 text-lg">Rp 150.000</p>
+                            <!-- GANTI DI SINI: Deskripsi singkat produk 2 -->
+                            <p class="text-sm text-gray-500 mt-3 h-12">Hiasan meja cantik dengan bunga tulip akrilik yang menawan.</p>
+                            <!-- GANTI DI SINI: Nomor WhatsApp Anda dan teks pesan -->
+                            <a href="https://api.whatsapp.com/send?phone=6283186867841&text=Halo,%20saya%20tertarik%20dengan%20Bunga%20Meja%20Tulip." target="_blank" class="mt-4 block w-full text-center btn-gradient text-white py-2.5 rounded-md font-semibold">
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- ### PRODUK 3 ### -->
+                    <div class="product-card bg-white rounded-xl shadow-md overflow-hidden reveal" style="transition-delay: 200ms;">
+                        <img src="buketmanis.jpg.jpeg" alt="Nama Produk 3" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl">Buket Bunga Manis</h3>
+                            <p class="text-pink-600 font-bold mt-2 text-lg">Rp 50.000</p>
+                            <p class="text-sm text-gray-500 mt-3 h-12">Buket ceria yang membawa kebahagiaan, dibuat dari akrilik premium.</p>
+                             <a href="https://api.whatsapp.com/send?phone=6283186867841&text=Halo,%20saya%20tertarik%20dengan%20Buket%20Bunga%20Matahari." target="_blank" class="mt-4 block w-full text-center btn-gradient text-white py-2.5 rounded-md font-semibold">
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- ### PRODUK 4 ### -->
+                    <div class="product-card bg-white rounded-xl shadow-md overflow-hidden reveal" style="transition-delay: 300ms;">
+                        <img src="buketmaniskayakkamu.jpg.jpeg" alt="Nama Produk 4" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl">Buket Manis Kayak Kamu</h3>
+                            <p class="text-pink-600 font-bold mt-2 text-lg">Rp 50.000</p>
+                            <p class="text-sm text-gray-500 mt-3 h-12">Kombinasi bunga, pink bagus dan imut cocok buat pasangan mu.</p>
+                             <a href="https://api.whatsapp.com/send?phone=6283186867841&text=Halo,%20saya%20tertarik%20dengan%20Hadiah%20Box%20Eksklusif." target="_blank" class="mt-4 block w-full text-center btn-gradient text-white py-2.5 rounded-md font-semibold">
+                                Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========== BAGIAN GALERI FOTO =========== -->
+        <section id="galeri" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-brand section-title">Galeri Karya Upik</h2>
+                    <p class="text-gray-500 mt-3 text-lg">Inspirasi hadiah dari karya yang telah memikat hati para emak-emak.</p>
+                </div>
+                <!-- GANTI DI SINI: Ganti semua link gambar di galeri ini -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid gap-4 reveal">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="bungacantik.jpg.jpeg" alt="Galeri Foto 1"></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="bungaakrilikwarnawarni.jpg.jpeg" alt="Galeri Foto 2"></div>
+                    </div>
+                    <div class="grid gap-4 reveal" style="transition-delay: 100ms;">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="bungaanggrek.jpg.jpeg" alt="Galeri Foto 3"></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="bungamawar.jpg.jpeg" alt="Galeri Foto 4"></div>
+                    </div>
+                    <div class="grid gap-4 reveal" style="transition-delay: 200ms;">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="buketmaniskayakkamu.jpg.jpeg" alt="Galeri Foto 5"></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="buketindah.jpg.jpeg" alt="Galeri Foto 6"></div>
+                    </div>
+                    <div class="grid gap-4 reveal" style="transition-delay: 300ms;">
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="buketmanis.jpg.jpeg" alt="Galeri Foto 7"></div>
+                        <div><img class="h-auto max-w-full rounded-lg shadow-md hover:shadow-xl transition-shadow" src="bungaakrilikbagus.jpg.jpeg" alt="Galeri Foto 8"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========== BAGIAN BAWAH / FOOTER & KONTAK =========== -->
+    <footer id="kontak" class="bg-gray-800 text-white pt-20 pb-10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-brand font-bold">Pesan Hadiah Spesial Anda?</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-gray-300">
+                Kami siap membantu mewujudkan hadiah impian Anda. Hubungi kami untuk pesanan custom atau pertanyaan lainnya.
+            </p>
+            <!-- GANTI DI SINI: Nomor WhatsApp dan teks pesan untuk tombol kontak utama -->
+            <a href="https://api.whatsapp.com/send?phone=6283186867841&text=Halo,%20saya%20ingin%20bertanya%20tentang%20produk%20UPIK%20FLOWER." target="_blank" class="mt-10 inline-block btn-gradient text-white font-bold px-10 py-4 rounded-full text-lg">
+                Konsultasi via WhatsApp
+            </a>
+            
+            <div class="mt-16 flex justify-center space-x-6">
+                <!-- GANTI DI SINI: Link untuk setiap sosial media Anda -->
+                <a href="https://www.instagram.com/_margi_p4?igsh=anVpaDdoeXF5c3I4" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-7 h-7"></i>
+                </a>
+                <a href="https://www.tiktok.com/@_______mrg?_t=ZS-8x3nA7m5vHE&_r=1" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110" aria-label="TikTok">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.4c-1.5 1.5-4.5 2.6-7 2.6-2.5 0-5.5-1.1-7-2.6C5.5 8.9 4.5 12 4.5 14c0 4.4 3.6 8 8 8s8-3.6 8-8c0-2-1-5.1-2.5-6.6z"></path><path d="M12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
+                </a>
+                <a href="https://x.com/PangestuMa71248?t=biRSxwRyxt787saNtpg8LA&s=09" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </a>
+                <a href="https://www.facebook.com/share/19mrd3SxXv/?mibextid=qi2Omg" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110" aria-label="Facebook">
+                    <i data-lucide="facebook" class="w-7 h-7"></i>
+                </a>
+            </div>
+
+            <div class="mt-16 border-t border-gray-700 pt-8">
+                <!-- GANTI DI SINI: Teks copyright dengan nama toko Anda -->
+                <p class="text-gray-500">&copy; 2024 UPIK FLOWER. Didesain dengan penuh cinta.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bagian teknis JavaScript, tidak perlu diubah -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
